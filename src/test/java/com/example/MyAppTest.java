@@ -17,7 +17,7 @@ public class MyAppTest {
     public void testSubtractNumbers() {
         MyApp app = new MyApp();
         int result = app.subtractNumbers(9, 5);
-        assertEquals(3, result, "9 - 5 should not equal 3");
+        assertEquals(4, result, "9 - 5 should equal 4");
     }
 
     @Test
