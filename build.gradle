@@ -35,3 +35,4 @@ sonarqube {
         property "sonar.login", "cd63098eac5a7ea420fdcee4d5c38cf8571e4cf2"
     }
 }
+
