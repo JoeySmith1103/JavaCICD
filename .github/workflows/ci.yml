@@ -1,10 +1,10 @@
-name: Java CI
+name: Java CI with SonarQube
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -23,10 +23,15 @@ jobs:
       - name: Install Gradle
         uses: gradle/gradle-build-action@v2
         with:
-          gradle-version: '7.2'  # 指定需要的 Gradle 版本
+          gradle-version: '7.2'
 
       - name: Build with Gradle
         run: gradle build
 
       - name: Run Tests with Gradle
-        run: gradle test
+        run: gradle test --info
+
+      - name: Run SonarQube Scan
+        run: gradle sonarqube
+        env:
+          SONAR_TOKEN: 'cd63098eac5a7ea420fdcee4d5c38cf8571e4cf2'

@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'org.sonarqube' version '3.3'
 }
 
 group 'com.example'
@@ -23,5 +24,14 @@ test {
         showCauses true
         showStackTraces true
         showStandardStreams = true
+    }
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectKey", "JoeySmith1103_JavaCICD"
+        property "sonar.organization", "joeysmith1103"
+        property "sonar.host.url", "https://sonarcloud.io"
+        property "sonar.login", "cd63098eac5a7ea420fdcee4d5c38cf8571e4cf2"
     }
 }
