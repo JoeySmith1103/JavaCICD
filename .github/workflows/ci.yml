@@ -14,10 +14,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up JDK 11
+      - name: Set up JDK 17
         uses: actions/setup-java@v2
         with:
-          java-version: '11'
+          java-version: '17'
           distribution: 'temurin'
 
       - name: Install Gradle
@@ -34,4 +34,4 @@ jobs:
       - name: Run SonarQube Scan
         run: gradle sonarqube
         env:
-          SONAR_TOKEN: 'cd63098eac5a7ea420fdcee4d5c38cf8571e4cf2'
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
