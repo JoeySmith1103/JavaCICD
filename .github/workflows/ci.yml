@@ -33,5 +33,3 @@ jobs:
 
       - name: Run SonarQube Scan
         run: gradle sonarqube
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
