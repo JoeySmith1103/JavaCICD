@@ -14,8 +14,14 @@ jobs:
       - name: check current directory
         run: pwd
 
+      - name: check current file
+        run: ls -la
+
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: check current file after checkout
+        run: ls -la
 
       - name: Set up JDK 17
         uses: actions/setup-java@v2
