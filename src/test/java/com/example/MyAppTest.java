@@ -42,3 +42,4 @@ public class MyAppTest {
         }, "Division by zero should throw IllegalArgumentException");
     }
 }
+
