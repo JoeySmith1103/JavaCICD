@@ -28,6 +28,8 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+      - name: check java version
+        run: java -version
 
       - name: Install Gradle
         uses: gradle/gradle-build-action@v2
