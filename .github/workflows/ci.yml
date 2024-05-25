@@ -11,14 +11,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: check file
-        run: ls
-
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: check file after checkout
-        run: ls
+      - name: check java version
+        run: java -version
+      - name: check gradle version
+        run: gradle -version
 
       - name: Set up JDK 17
         uses: actions/setup-java@v2
@@ -30,6 +29,10 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           gradle-version: '7.2'
+      - name: check java version
+        run: java -version
+      - name: check gradle version
+        run: gradle -version
 
       - name: Build with Gradle
         run: gradle build
